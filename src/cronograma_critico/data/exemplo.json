@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "projeto": {
+    "id": "IMPLANTACAO-LINHA-ENVASE-2026",
+    "titulo": "Implantação de Telemetria e CLP da Linha de Envase 04",
+    "data_inicio": "2026-03-02"
+  },
+  "calendario": {
+    "dias_uteis_semana": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "feriados": [
+      "2026-03-09",
+      "2026-03-19"
+    ]
+  },
+  "orcamento_caminhos": 1000,
+  "tarefas": [
+    {
+      "id": "T01",
+      "nome": "Marco de Abertura e Bloqueio LOTO",
+      "duracao_dias": 0,
+      "setor": "Planejamento"
+    },
+    {
+      "id": "T02",
+      "nome": "Levantamento de Campo e Matriz de I/O",
+      "duracao_dias": 3,
+      "setor": "Engenharia"
+    },
+    {
+      "id": "T03",
+      "nome": "Montagem Elétrica do Painel CLP",
+      "duracao_dias": 5,
+      "setor": "Automação"
+    },
+    {
+      "id": "T04",
+      "nome": "Testes em Bancada (TAF) do Painel",
+      "duracao_dias": 4,
+      "setor": "Automação"
+    },
+    {
+      "id": "T05",
+      "nome": "Configuração do Gateway Edge e Broker MQTT",
+      "duracao_dias": 4,
+      "setor": "Telemetria"
+    },
+    {
+      "id": "T06",
+      "nome": "Desenvolvimento de Telas SCADA e Historiador",
+      "duracao_dias": 5,
+      "setor": "Software"
+    },
+    {
+      "id": "T07",
+      "nome": "Lançamento de Eletrocalhas e Cabos Blindados",
+      "duracao_dias": 3,
+      "setor": "Campo"
+    },
+    {
+      "id": "T08",
+      "nome": "Instalação e Calibração de Sensores de Vazão",
+      "duracao_dias": 3,
+      "setor": "Instrumentação"
+    },
+    {
+      "id": "T09",
+      "nome": "Elaboração de POP e Treinamento da Equipe",
+      "duracao_dias": 3,
+      "setor": "Operação"
+    },
+    {
+      "id": "T10",
+      "nome": "Comissionamento Integrado a Frio",
+      "duracao_dias": 4,
+      "setor": "Comissionamento"
+    },
+    {
+      "id": "T11",
+      "nome": "Partida Assistida e Operação Sombra",
+      "duracao_dias": 2,
+      "setor": "Operação"
+    },
+    {
+      "id": "T12",
+      "nome": "Marco de Homologação e Go-Live",
+      "duracao_dias": 0,
+      "setor": "Planejamento"
+    }
+  ],
+  "dependencias": [
+    {
+      "id": "D01",
+      "origem": "T01",
+      "destino": "T02",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D02",
+      "origem": "T02",
+      "destino": "T03",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D03",
+      "origem": "T03",
+      "destino": "T04",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D04",
+      "origem": "T02",
+      "destino": "T05",
+      "tipo": "FS",
+      "defasagem_dias": 1
+    },
+    {
+      "id": "D05",
+      "origem": "T05",
+      "destino": "T06",
+      "tipo": "FF",
+      "defasagem_dias": 4
+    },
+    {
+      "id": "D06",
+      "origem": "T02",
+      "destino": "T07",
+      "tipo": "SS",
+      "defasagem_dias": 2
+    },
+    {
+      "id": "D07",
+      "origem": "T07",
+      "destino": "T08",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D08",
+      "origem": "T05",
+      "destino": "T09",
+      "tipo": "FS",
+      "defasagem_dias": -1
+    },
+    {
+      "id": "D09",
+      "origem": "T03",
+      "destino": "T08",
+      "tipo": "SS",
+      "defasagem_dias": 1
+    },
+    {
+      "id": "D10",
+      "origem": "T04",
+      "destino": "T10",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D11",
+      "origem": "T06",
+      "destino": "T10",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D12",
+      "origem": "T08",
+      "destino": "T10",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D13",
+      "origem": "T09",
+      "destino": "T11",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D14",
+      "origem": "T10",
+      "destino": "T11",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    },
+    {
+      "id": "D15",
+      "origem": "T11",
+      "destino": "T12",
+      "tipo": "FS",
+      "defasagem_dias": 0
+    }
+  ]
+}
